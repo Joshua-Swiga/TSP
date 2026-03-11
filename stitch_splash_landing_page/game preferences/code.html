@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Game Preferences</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ea2a2a",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-range::-webkit-slider-runnable-track {
+            background: #e2e8f0;
+            height: 0.25rem;
+            border-radius: 9999px;
+        }
+        .dark .custom-range::-webkit-slider-runnable-track {
+            background: #4a5568;
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background: #ea2a2a;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 9999px;
+            margin-top: -0.5rem;
+            border: 3px solid white;
+            cursor: pointer;
+            transition: transform 0.15s ease-in-out;
+        }
+        .dark .custom-range::-webkit-slider-thumb {
+            border-color: #1a1a1a;
+        }
+        .custom-range::-webkit-slider-thumb:active {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-zinc-900/80 font-display text-zinc-900 dark:text-zinc-200 flex items-center justify-center min-h-screen">
+<div aria-hidden="true" class="fixed inset-0 bg-black/30 backdrop-blur-sm"></div>
+<div class="relative w-full max-w-md rounded-xl bg-white dark:bg-background-dark p-8 shadow-2xl shadow-primary/10 m-4">
+<div class="text-center">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
+<svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h1 class="text-2xl font-bold text-zinc-900 dark:text-white">Game Preferences</h1>
+<p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">Choose your opponents to start a new game.</p>
+</div>
+<form class="mt-8 space-y-6">
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">I am interested in</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="flex items-center justify-center space-x-2 cursor-pointer p-3 border rounded-lg transition-all duration-200 dark:border-zinc-700 has-[:checked]:bg-primary has-[:checked]:text-white has-[:checked]:border-primary dark:has-[:checked]:border-primary">
+<input checked="" class="sr-only" name="sex" type="radio" value="men"/>
+<span class="text-sm font-semibold">Men</span>
+</label>
+<label class="flex items-center justify-center space-x-2 cursor-pointer p-3 border rounded-lg transition-all duration-200 dark:border-zinc-700 has-[:checked]:bg-primary has-[:checked]:text-white has-[:checked]:border-primary dark:has-[:checked]:border-primary">
+<input class="sr-only" name="sex" type="radio" value="women"/>
+<span class="text-sm font-semibold">Women</span>
+</label>
+<label class="flex items-center justify-center space-x-2 cursor-pointer p-3 border rounded-lg transition-all duration-200 dark:border-zinc-700 has-[:checked]:bg-primary has-[:checked]:text-white has-[:checked]:border-primary dark:has-[:checked]:border-primary">
+<input class="sr-only" name="sex" type="radio" value="everyone"/>
+<span class="text-sm font-semibold">Everyone</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300" for="gender">Opponent's Gender Identity</label>
+<select class="mt-2 block w-full rounded-lg border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-zinc-800 py-3 px-4 placeholder-zinc-400 dark:placeholder-zinc-500 focus:border-primary focus:ring-primary transition-colors" id="gender" name="gender">
+<option>Any</option>
+<option>Man</option>
+<option>Woman</option>
+<option>Non-binary</option>
+<option>Transgender</option>
+</select>
+</div>
+<div>
+<div class="flex justify-between items-center">
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300" for="age-range">Age Range</label>
+<span class="text-sm font-bold text-primary" id="age-value">18 - 45</span>
+</div>
+<div class="mt-2">
+<input class="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer dark:bg-zinc-700 custom-range" id="age-range" max="99" min="18" name="age-range" oninput="document.getElementById('age-value').innerText = `18 - ${this.value}`" type="range" value="45"/>
+<div class="flex justify-between text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+<span>18</span>
+<span>99</span>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark transition-all" type="submit">
+                Find a Match
+            </button>
+<button class="mt-3 w-full flex justify-center py-3 px-4 border border-zinc-300 dark:border-zinc-700 rounded-lg shadow-sm text-sm font-bold text-zinc-700 dark:text-zinc-300 bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 transition-all" type="button">
+                Cancel
+            </button>
+</div>
+</form>
+</div>
+
+</body></html>

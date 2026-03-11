@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Game</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ea2a2a",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        #lightbox {
+            display: none;
+        }
+        #lightbox:target {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between px-10 py-4 border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9h4v2h-4v-2zm0 4h4v2h-4v-2zm0-8h4v2h-4V7z"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-gray-900 dark:text-white">Play or Pay</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Games</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Blog</a>
+<a class="text-sm font-medium text-primary transition-colors font-semibold" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuFvm92ZgLEBpl2ZHRePrYV9amOMF-vn1ij2r44cUhGV1QknM_uTREtPkNytfjIKUucAI1Vc0qx4HA5zldbPVkSd5JrEtO7csUVnUJAaNhfdWHMdKNeVCHqelTM7MyjHB-guvz4EGXcZzCQrKRyrRDZ2XKXxGGf4XxQdS_6m9CiEA3jk80jypqIOTXjTekwypAZxkoFGbyqSEDUyZnn_SbCY6pyWoGBrfCY_iy5uuvXZRMi3vTb5aB9GCq2i6-sSUGZkqoiVvqFX1q');"></div>
+</div>
+</header>
+<main class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+<div class="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-1 bg-white dark:bg-background-dark rounded-xl shadow-xl flex flex-col h-full">
+<div class="relative">
+<img alt="Truth or Dare game image" class="w-full h-48 object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARLa1e7MepJ2aao_HIAlI7Ag483CSSyZQPyAih-6i1zmxO0co7wwaLfuuAQpel6Q0uvT-dX2c5SDQZzzMPC6un7J4XK3ShGRkyaJqSCvqZ_ANNTFrhikJ9u-qOg04jjm94dKoQ86K1apkeCfc_Jz6M6R4auFp8Kz0FecoSdX9INJ-mK_d8FvWGBIumUJB82KmaYzQVg2gdugLM025gwygxLyqKnpV-Y4UyqneeJMM0yl61Wyem5a0buAPwP5k0Q-ZptcsHNgHs192w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-t-xl"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h2 class="text-3xl font-bold">Truth or Dare</h2>
+<p class="mt-1 text-base">with <span class="font-semibold">Sophia</span></p>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<p class="text-gray-600 dark:text-gray-300">
+<span class="font-bold text-primary">Truth:</span> What's the most embarrassing thing that's ever happened to you?
+                        </p>
+<div class="mt-6 space-y-3">
+<button class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg text-sm hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                                Complete Challenge
+                            </button>
+<button class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold py-3 px-4 rounded-lg text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+                                Prompt Token Transfer
+                            </button>
+</div>
+<div class="mt-auto pt-6 text-center text-xs text-gray-500 dark:text-gray-400">
+<p>Failing a challenge will automatically transfer tokens to your opponent.</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2 bg-white dark:bg-background-dark rounded-xl shadow-xl flex flex-col h-[calc(100vh-150px)]">
+<div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-800">
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Game Chat</h3>
+<div class="text-sm font-semibold">
+<span class="text-gray-600 dark:text-gray-400">Token Balance:</span>
+<span class="text-primary font-bold text-lg">150</span>
+</div>
+</div>
+<div class="flex-1 space-y-6 p-6 overflow-y-auto">
+<div class="flex items-start gap-3">
+<img alt="Sophia's avatar" class="w-10 h-10 rounded-full flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXIseVdvKhfeTx5l5TWipCd6YbPgHETW0QkRyQadX_reqbQ05G-TEHW6ZTwzw_L2TMwFnqc_8eYuWcT4kmQqhb6CiS504K1vSJFQtbodQg_YldklBZtBWAePl1PIbU0CBZwuliRaWjPTPa5rHEmo7t9Tbjtq798hWJ9b6A_zcMZyOVtwA64XuP63DvuhzQrg1uhaf63olnKCKUPq_Fh8RS6joPRdnDS4QIReg93Xm2yaWO_g6_Jia2B5gM_apcaA5u1NH2XCd_PgIM"/>
+<div>
+<p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Sophia</p>
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg rounded-tl-none px-4 py-3 max-w-md">
+<p class="text-sm text-gray-800 dark:text-gray-200">Oh no, I'm not telling you that!</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-3 justify-end">
+<div>
+<p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1 text-right">You</p>
+<div class="bg-primary text-white rounded-lg rounded-tr-none px-4 py-3 max-w-md">
+<p class="text-sm">Come on, it's just a game!</p>
+</div>
+</div>
+<img alt="Your avatar" class="w-10 h-10 rounded-full flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwOWLlXkgcuMUVZfMxBZDysa23nPOufyza8-qWnP6j7afC2ZLzMtLtU4-jAXaIJrYjEkYfB5Jh3coyiMs8VZL4aUzQLzE7PLc6MtzDpFZutAuuY-i8wWoaAVishMEItcat7sXxLNIPeYW0CW2a28VG1RiEcmgTO7DTVbcl2ZOdxKU6vLOjiOB27FiZvJVKnvy7ijhbG3FAHqpmMnt9qoEkoR_nVM_9Rt-sW1_vK0Y6O0HztbnifhohEaDmHVMjH4uvKIuSnYjn6WPW"/>
+</div>
+<div class="flex items-start gap-3">
+<img alt="Sophia's avatar" class="w-10 h-10 rounded-full flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3eiSx88ppPPzITrBrpnRIFqXBDVyzu3Ud0C3_u38dtNw4w0UbqQ99RxUk_LNekkKy80YvKAb58jEgFp22343tKzWiBjOGNK-wnmtx2XSZuAr2dsw9keuLRiITX2bLZ942BXnwxEtTS92RjSRjSWdcLpxilS5rP3PGbD1EjgHQNzgVRFyA6G-gfeLSgmVf4VZZzhy1vpM-JP9hdBTmeEOX-0xS9u4CCm1bP1mXUOW3hNPAN8otaXbs4XiLUck-OKQv54AoQsFPzJoJ"/>
+<div>
+<p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Sophia</p>
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg rounded-tl-none px-4 py-3 max-w-md">
+<p class="text-sm text-gray-800 dark:text-gray-200">Fine, but you owe me for this... Here's proof.</p>
+<a class="mt-2 block" href="#lightbox">
+<img alt="Proof image" class="rounded-lg h-32 w-auto object-cover cursor-pointer hover:opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJvgjCaV6g0fEPJCDzcdlY1LqwZYk3MbTCpg9Rc7tUCY7c2TLYCR-RR0J1TS_NbASOV2Fif9ALDGIMHJOZU2nKi-SZA0X--wPxNZEj2ANAKmFSsBx2vZJt15JEJmu57hggiVA1fEOYbRbrJVu2AggCRqq5uNmqsPi1LF95wQJk2z7NYPWDvzgyg1Bqy5T4xuPeILAtmffzBYe0nWi36eGyiwv8Xs0xpUCdmJQaD3dwdDFgV68iozE8LpD9DRhQl5pT4J7a4Q3d0zIX"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+<div class="relative flex items-center">
+<input class="w-full bg-gray-100 dark:bg-gray-800 border-2 border-transparent focus:border-primary focus:ring-0 rounded-full py-3 pl-5 pr-28 text-sm placeholder-gray-500" placeholder="Type a message..." type="text"/>
+<div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
+<button class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">
+                                        add_photo_alternate
+                                    </span>
+</button>
+<button class="bg-primary text-white rounded-full px-5 py-2 text-sm font-semibold ml-1 hover:bg-red-700 transition-colors flex items-center gap-1">
+                                    Send
+                                    <span class="material-symbols-outlined text-base">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="fixed inset-0 z-50 bg-black/80 items-center justify-center backdrop-blur-sm" id="lightbox">
+<div class="relative max-w-4xl max-h-[90vh] w-full">
+<a class="absolute -top-10 -right-2 text-white text-5xl font-bold hover:text-primary transition-colors z-10" href="#">×</a>
+<img alt="Enlarged proof image" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKYOdXw-lLI3vh0S0wC7efd2M0LfypSddwSPBcgag-62dzxk3EO7CKicEbt4Q6bBWPDurw4aShlpGqyyceBqjc9rf1MsGR1jMTH2aAF5z9FFoxIegzgUi23I62kY1P5bfgnG5SJ4TsROEuFKv-NsX2sok43DTiKzefr0ex5oo1fGK98bQjP2ldpC3g6ktK2oryZO2CANaadLPlCb8hVRQ62I2lATOfvWEOhVCMa-tWme4oTevs4ug9f4PFD9kEuqGrrbfKF8-pcsph"/>
+</div>
+</div>
+
+</body></html>

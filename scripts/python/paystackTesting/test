@@ -1,0 +1,69 @@
+CREATE TABLE fact_birth_reports (
+    -- Primary key
+    birth_fact_name BIGSERIAL PRIMARY KEY,
+
+    -- Time dimensions
+    birth_date DATE NULL,
+    year INTEGER NULL,
+    month INTEGER NULL,
+    year_month VARCHAR(7) NULL, -- e.g. 2025-01
+    weight NUMERIC (8,2) NULL, -- Male / Female / intersex
+
+
+    -- Geography (birth occurrence)
+    birth_country_name INTEGER NULL,
+    birth_county_name INTEGER NULL,
+    birth_sub_county_name INTEGER NULL,
+    birth_division_name INTEGER NULL,
+    birth_location_name INTEGER NULL,
+    birth_sub_location VARCHAR(255) NULL,
+
+    -- Geography (mother resnameence)
+    mother_country_name INTEGER NULL,
+    mother_county_name INTEGER NULL,
+    mother_sub_county_name INTEGER NULL,
+    mother_division_name INTEGER NULL,
+    mother_location_name INTEGER NULL,
+    mother_sub_location VARCHAR(255) NULL,
+
+    -- Sex & birth characteristics
+    sex VARCHAR(10) NULL, -- Male / Female / intersex
+    type_of_birth VARCHAR(50) NULL, -- Live / Stillbirth
+    nature_of_birth VARCHAR(50) NULL, -- Single / Twin / Triplet
+    stillbirth_flag BOOLEAN NULL,
+
+    -- Mother demographics
+    mother_age INTEGER NULL,
+    is_underage_mother BOOLEAN NULL,
+    mother_marital_status VARCHAR(20) NULL,
+    mother_education_level VARCHAR(50) NULL,
+    mother_nationality_type VARCHAR(50) NULL,
+    mother_occupation VARCHAR(255) NULL,
+    mother_nationality_type VARCHAR(50) NULL,
+
+    -- Father demographics
+    father_pressent_flag BOOLEAN NULL,
+
+    -- Based on mother and father information 
+    abandoned BOOLEAN NULL,
+
+    -- Place of occurrence
+    birth_place_type VARCHAR(50) NULL, -- Facility / Community / Transit
+    birth_hospital_name INTEGER NULL,
+
+    -- Registration details
+    registration_type VARCHAR(20) NULL, -- Current / Late / Abroad
+    late_registration_flag BOOLEAN NULL,
+    registration_delay_days INTEGER NULL,
+    is_foreign_birth BOOLEAN NULL,
+    birth_abroad_location VARCHAR(255) NULL,
+
+    -- Administrative tracking
+    registrar_district_name INTEGER NULL,
+    office_district_name INTEGER NULL,
+
+    -- Metadata
+    date_registered DATE NULL,
+    date_inserted TIMESTAMP NULL,
+    date_updated TIMESTAMP NULL
+);

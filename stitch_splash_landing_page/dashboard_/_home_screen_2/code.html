@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --primary-color: #ea2a2a;
+                --primary-glow: 0 0 20px 5px rgba(234, 42, 42, 0.3);
+                --background-light: #F7F7F8;
+                --background-dark: #121212;
+                --surface-light: #ffffff;
+                --surface-dark: #1f2937;
+                --text-light: #0D0D0D;
+                --text-dark: #ffffff;
+                --muted-light: #6b7280;
+                --muted-dark: #9ca3af;
+                --gradient-start: #FFD2D2;
+                --gradient-end: #FFEBEB;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .modal {
+            display: none;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal.active+.modal-backdrop {
+            display: flex;
+        }
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px 5px rgba(234, 42, 42, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 35px 12px rgba(234, 42, 42, 0.4);
+            }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+        .card-hover-effect {
+             @apply transition-all duration-300 ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex min-h-screen">
+<aside class="w-24 bg-surface-light dark:bg-surface-dark/50 border-r border-gray-200 dark:border-surface-dark flex flex-col p-4 items-center shadow-lg">
+<div class="bg-primary text-white p-3 rounded-full mb-10 shadow-[var(--primary-glow)]">
+<svg class="feather feather-zap" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+</svg>
+</div>
+<nav class="flex flex-col gap-4 flex-grow items-center">
+<a class="flex items-center justify-center p-3 rounded-full bg-primary text-white transition-all duration-300 transform hover:scale-110 hover:shadow-[var(--primary-glow)]" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex items-center justify-center p-3 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark text-muted-light dark:text-muted-dark hover:text-primary transition-all duration-300 transform hover:scale-110" href="#">
+<span class="material-symbols-outlined">gamepad</span>
+</a>
+<a class="flex items-center justify-center p-3 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark text-muted-light dark:text-muted-dark hover:text-primary transition-all duration-300 transform hover:scale-110" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+</a>
+<a class="flex items-center justify-center p-3 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark text-muted-light dark:text-muted-dark hover:text-primary transition-all duration-300 transform hover:scale-110" href="#">
+<span class="material-symbols-outlined">rss_feed</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col items-center gap-4">
+<a class="relative flex items-center justify-center p-3 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark text-muted-light dark:text-muted-dark hover:text-primary transition-all duration-300 transform hover:scale-110" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 block h-2 w-2 rounded-full bg-primary ring-2 ring-surface-light dark:ring-surface-dark"></span>
+</a>
+<a href="#">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-2 border-primary transition-transform duration-300 hover:scale-110 hover:shadow-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8bRKOmNKfKrXuGETlYuF-jnD58Lc23DqkZHOqc00sA6wbxvOzSO0svKfKhmk5NS5oQ4O29BVcu8tgDN1du5WShT08T6XltvhS3U8KQbdDy2zHHC7mXK1tLR3RxGOtZ4TofhUAAQj9zwldXLBv_JO_0LoEAeYJzx9FQ7LO41SA6f__lAM8ONUaMcfU5ccsqnHyILdWt9ZQEr6gK7_Kq1Aox1vi8djF9mZLL0FnT50FduOPUZ7Ue5TdszrWzNDVX9jsXBX6w5qJ-XFr");'></div>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<header class="flex justify-between items-center mb-10">
+<div>
+<h1 class="text-4xl font-bold">Welcome back, Sophia!</h1>
+<p class="text-muted-light dark:text-muted-dark text-lg">The stage is set. Time to play.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-surface-light dark:bg-surface-dark px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 dark:border-surface-dark">
+<span class="material-symbols-outlined text-primary text-2xl">toll</span>
+<span class="font-bold text-xl">1,500</span>
+</div>
+<button class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary/90 transition-transform duration-300 transform hover:scale-105 hover:shadow-[var(--primary-glow)] flex items-center gap-2 text-lg" id="buyTokensBtn">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        Buy Tokens
+                    </button>
+</div>
+</header>
+<div class="grid grid-cols-1 @container lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-8 card-hover-effect">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold">Start a New Game</h2>
+<button class="text-primary font-semibold flex items-center gap-1 group">
+                                See All <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 @[500px]:grid-cols-3 gap-6">
+<div class="group relative rounded-2xl overflow-hidden cursor-pointer transform transition-transform duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnk5wA9XtHLWe9CCtw_XeHktwIvM1NwbBh2W4fGH3buxaTu0Wgt8tYFU_xtGW31ScCvTnJJAba0JIPCyxhyqVZrTgdN021FMACD84jVASWv9qBy9ay_vpL6AxKKI-peJS_YhdWrxyWg0l8cBrLE7SqS1n1T3mCWteD5CMQNETbTrxTbSCtJkkyz1gczTdU9tC9W8DQOJcF2gnesktwKmLxcdoD2Pc-7o2VyBYcWK0eXiFZZF3xEtgC_RWvsDWvVMpR_DTG8_EFkDPW");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-bold text-white text-xl">Truth or Dare</h3>
+<p class="text-white/80 text-sm">Classic game, new twists.</p>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden cursor-pointer transform transition-transform duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcOTrlNaLnJN_Kx9WFOIbVZRRtum2F-x3WUgO7DZzJGFty_QyiBz7d4KjDOexIpiaa9ZK9t7D0GzQ_QP9mxqhtVBS1EAJWe6kasiNbSsEI0kTMHEHLTx0Yu3FOufiezZMilgyRHZDHRE5KdSC6k6yHNGCmSyGSmzilWnukd43PcEQXvY2GUhvEEN_IAxXvs3Rj6Cd5kXU0dm9lkqaAK2HZpM57aT49A_xl8AIEzCyjhzNeIxShIw_GIhhi7xiOxS4aNGU3Ug-Jo2mg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-bold text-white text-xl">Would You Rather</h3>
+<p class="text-white/80 text-sm">Make the hard choices.</p>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden cursor-pointer transform transition-transform duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpRWFs6F8PFOgTwGw2r1egCSvrRjk62rd2jm3T_oFxAB4vjDYVPYXDYK-3zYxzo07SDy0a3SkPSIfmRd-jwzAIM7Pi55PDVC9NEQ_akSbfsPss-lrP2L4eMXMklTSzO-ynuNQFS3o7NAf6NNkYul-_ptr4dTL8pIEs23rwGWg0Bl5_vViCA5fXOSEa-GKGB1_oWpzhJyYPdQF4YdAz-AlbPSd9sZFcBM8XgRkXmxRzYk-TgZ35gWvhyWpDeljMrfGTnHwDY8_pQU4W");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-bold text-white text-xl">Never Have I Ever</h3>
+<p class="text-white/80 text-sm">Reveal your secrets.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] dark:from-red-900/50 dark:to-red-800/30 rounded-2xl p-8 flex flex-col items-center justify-center text-center animate-pulse-glow card-hover-effect">
+<h2 class="text-3xl font-extrabold mb-3 text-red-800 dark:text-white">Enter the Lobby</h2>
+<p class="text-red-700/80 dark:text-red-200 mb-6 max-w-sm">The arena awaits. Find an opponent and prove your mettle. Players are waiting.</p>
+<button class="bg-primary text-white font-bold py-4 px-10 rounded-full hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 text-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-2xl" id="notifyBtn">
+<span class="material-symbols-outlined">swords</span> Find Match
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-8">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 card-hover-effect">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold">Your Stats</h2>
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">drag_indicator</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<p class="text-muted-light dark:text-muted-dark">Games Won</p>
+<p class="font-bold text-lg text-primary">42</p>
+</div>
+<div class="w-full bg-primary/20 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<p class="text-muted-light dark:text-muted-dark">Win Rate: <span class="font-bold text-text-light dark:text-text-dark">75%</span></p>
+<p class="text-muted-light dark:text-muted-dark">Next rank: 8 wins</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 card-hover-effect">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold">Who's Online</h2>
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">drag_indicator</span>
+</div>
+<div class="flex items-center -space-x-3 mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-4 border-surface-light dark:border-surface-dark transform hover:scale-110 transition-transform cursor-pointer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnwKiMerrVmnJKgPCZ_mcwbGwo88CWNAmpL61Kt4HK37hBkSHQHLbJ8LIzWRGoJ-nv0mIgdQovlO29Znst9oay7FqB8TJr1uBQoiXwLG-CHmsja65S46cQEGY1ZVibwFukPa7lqSJZBr0j1mnci67j7y2tmIcSIVOrmFl8_JP9bubN3aANgbWTJu2jnQG-SZ6gPaNx1iGGpEwPuITRCAs86j021JhXKVyIXMSe-BXcuBmM2g0JcprTk6zmYfh73d83hbrxVK4ic-EP");'></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-4 border-surface-light dark:border-surface-dark transform hover:scale-110 transition-transform cursor-pointer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAg5aYy2HvvC3SvHvNtaDhthiJ3iuf-dybqkGn9uHPdoAGR_bPfr2n3AppJEg-eSvfECgaOlwEaZhgZyououyJfwVbYmHidcSajlAffCh0L-RhXqszIjM9y6dNpYnF5eE-eBHAXIWgy2ptoU1Nv0j5FotKFr2gxvVsbtApi3QcG-ewhtK9w9IwYWbVaEYdBHBGjMMNAf9maXD04dTF_UdPWH2x_hergnyUzydbAgP-TNU6F500LZbSPdvpbTt3WOeJOwIwGV8FD0JjP");'></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-4 border-surface-light dark:border-surface-dark transform hover:scale-110 transition-transform cursor-pointer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWjiUyKTI9LuY-3-k9BCK1pOfKDWX_dtJwshKfPBKSpmUGVjiUtqfycNM-fopSdYU5aPX6C-yw_Oica17rWExNALSEPqz3iAIrjJP6tfoOMMwS_59JDRqz3VUjS-KIf_U0Ua8f-B6zU0yF9AM5baagXYt8UwY0rLRcOmHq_30WRth2ghilKBCDGm56zXbClJOY5N9_UwGDOjw6F_l3wBUrEbTUVocE1i0hsPPzvk3upKWe5HiSP5JW9agmaN-BwEbhzzJsOD9v5R8e");'></div>
+<div class="size-12 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold border-4 border-surface-light dark:border-surface-dark transform hover:scale-110 transition-transform cursor-pointer">
+                                +5
+                            </div>
+</div>
+<p class="text-muted-light dark:text-muted-dark text-sm">8 users are currently active.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 card-hover-effect">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold">Recent Opponents</h2>
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">drag_indicator</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between group hover:bg-primary/5 dark:hover:bg-primary/10 p-2 rounded-lg transition-colors duration-200">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgmWpfByU62NX0oFSh6Ziq1zGGPflyC2ZXprVUfqx6Lp7Gvyw39YcPWVmivUNHwfDUDoE_hRu0WMUTCLhDp1IG06vKVfPstRcR0D4Ga2x3Ts9fCvVFXkGKDduPeRx_JkR28vYHwwIZNXO5ZHt76XG90e2DQ3eCeNx6z_JjqJ45aFp-I1jndz4GKywwUHi45hi2O_yvwr_PxjU6krl_iGMlRXRuti8OLOpw6qtdqobNT7yw3_E2d3zlGUuEJXL6HZuCh2g1XQdyMwec");'></div>
+<div>
+<p class="font-semibold">AlexD</p>
+<p class="text-sm text-muted-light dark:text-muted-dark">@alex_d</p>
+</div>
+</div>
+<button class="text-primary hover:text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity transform-gpu group-hover:scale-110">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+<div class="flex items-center justify-between group hover:bg-primary/5 dark:hover:bg-primary/10 p-2 rounded-lg transition-colors duration-200">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCZoTsNd249MEDw2nzh14oQ0_v0iGmO-__TSotQsuVMLiaBVWFHjIc_BqfnlY4aIdyHqleyiDnODbjMSmbTHprhynpo3O9k71g33VS6MWePa2Cs_bcgUpi7qw6XC_E6MDKLjZcd4HKo3aKgf4_6wstBnzI4nuhuxX7yx9XOq3Mp0IzLq4rMREpPZRGJO95vZW7S01f4pmSEjRXKVCZvXykDby_VRi6j_SQXVaVit-uFQ9YyVqyL-n5RlBQZ2aWte81wKsmziUSOKwR");'></div>
+<div>
+<p class="font-semibold">JennaZ</p>
+<p class="text-sm text-muted-light dark:text-muted-dark">@jenna_z</p>
+</div>
+</div>
+<button class="text-primary hover:text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity transform-gpu group-hover:scale-110">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+<div class="flex items-center justify-between group hover:bg-primary/5 dark:hover:bg-primary/10 p-2 rounded-lg transition-colors duration-200">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBRFK-80JZVXQVMhx-s-JALNb052EWjJ0WAIQXFPhVeAHoMxkD6QID2LfcPGmCMKmbqOjneZN28pqL4c8Vt758dph4J4ATHO2huKKmDp2-5BKn-vJUpeA6X3tILBf_n35RPZcbtTgXw7yx5FHsVz3Zz6Rn-yHWkJrL3WQ0VI7pUcW5WE7vqb-uovHH7HVJxgjVgJ45A7TmJC9ztp-l962r1OdQLkX3Z731YZ25H1f2LMOk0RMHTro2bRRdN8Coi8ET9yGoHoRgHooM");'></div>
+<div>
+<p class="font-semibold">MikeR</p>
+<p class="text-sm text-muted-light dark:text-muted-dark">@mike_r</p>
+</div>
+</div>
+<button class="text-primary hover:text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity transform-gpu group-hover:scale-110">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="modal fixed inset-0 z-50 items-center justify-center p-4" id="notificationModal">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-8 shadow-2xl w-full max-w-md text-center relative">
+<h2 class="text-2xl font-bold mb-2">Get Notified!</h2>
+<p class="text-muted-light dark:text-muted-dark mb-6">We'll ping your number (+1-XXX-XXX-5678) when a player is ready for you.</p>
+<div class="flex gap-4">
+<button class="flex-1 bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors duration-200" id="optInBtn">Yes, notify me</button>
+<button class="flex-1 bg-gray-200 dark:bg-surface-dark text-text-light dark:text-text-dark font-bold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200" id="optOutBtn">No, thanks</button>
+</div>
+</div>
+</div>
+<div class="modal-backdrop"></div>
+<div class="modal fixed inset-0 z-50 items-center justify-center p-4" id="buyTokensModal">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-8 shadow-2xl w-full max-w-md text-center relative">
+<button class="absolute top-4 right-4 text-muted-light dark:text-muted-dark hover:text-primary" id="closeBuyTokens"><span class="material-symbols-outlined">close</span></button>
+<h2 class="text-2xl font-bold mb-2">Top Up Tokens</h2>
+<p class="text-muted-light dark:text-muted-dark mb-6">We'll send a confirmation to your number (+1-XXX-XXX-5678) to complete your purchase.</p>
+<button class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors duration-200">Confirm Purchase</button>
+</div>
+</div>
+<div class="modal-backdrop"></div>
+<script>
+        const notifyBtn = document.getElementById('notifyBtn');
+        const notificationModal = document.getElementById('notificationModal');
+        const optInBtn = document.getElementById('optInBtn');
+        const optOutBtn = document.getElementById('optOutBtn');
+        const buyTokensBtn = document.getElementById('buyTokensBtn');
+        const buyTokensModal = document.getElementById('buyTokensModal');
+        const closeBuyTokens = document.getElementById('closeBuyTokens');
+        function showModal(modal) {
+            modal.classList.add('active');
+        }
+        function hideModal(modal) {
+            modal.classList.remove('active');
+        }
+        if (notifyBtn) {
+            notifyBtn.addEventListener('click', () => {
+                // For this redesign, the "Find Match" button does not open a modal.
+                // If modal functionality is needed, uncomment the line below.
+                // showModal(notificationModal);
+            });
+        }
+        if (optInBtn) {
+            optInBtn.addEventListener('click', () => {
+                hideModal(notificationModal);
+                // Add logic to handle opt-in
+            });
+        }
+        if (optOutBtn) {
+            optOutBtn.addEventListener('click', () => {
+                hideModal(notificationModal);
+            });
+        }
+        if (buyTokensBtn) {
+            buyTokensBtn.addEventListener('click', () => {
+                showModal(buyTokensModal);
+            });
+        }
+        if (closeBuyTokens) {
+            closeBuyTokens.addEventListener('click', () => {
+                hideModal(buyTokensModal);
+            });
+        }
+        // Close modal if backdrop is clicked
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+            backdrop.addEventListener('click', (e) => {
+                if (e.target === backdrop) {
+                    hideModal(notificationModal);
+                    hideModal(buyTokensModal);
+                }
+            });
+        });
+    </script>
+
+</body></html>

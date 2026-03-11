@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Blog</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ea2a2a",
+              "background-light": "#f8f6f6",
+              "background-dark": "#211111",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-200">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 border-b border-zinc-200/50 dark:border-zinc-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-zinc-900 dark:text-white">Play or Pay</h1>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Challenges</a>
+<a class="text-sm font-bold text-primary" href="#">Blog</a>
+<a class="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-zinc-200/50 dark:bg-zinc-800/50 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRbulxcu9KHGU7I5UEzPviyygCKKvXTZht7hgWalDrOBH8n07I_v7Q6OConb0Hz1tptv9F7IWYFMYaKJKUCsIo7gxz4XyPKbiuDq5OGJFzCvtGxbPcNrdZP739hhzzGqshLHvVHY_NH8iFXvNUE4VUxBURDADyZW35a_KhUAhPFWc-66QslY9Cp6NI7yzQjtW5DS_KJFvKUsQp-laAU9kTWdP9UaQr_l7XbgwriHKu0yzxHHPizTdORxAE_MSh85IXGTXHMuz45Ivz");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+<div class="mb-12 text-center">
+<h2 class="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">Our Blog</h2>
+<p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">Insights, strategies, and stories from the Play or Pay community.</p>
+</div>
+<div class="grid grid-cols-1 gap-12">
+<a class="group block" href="#">
+<div class="grid grid-cols-1 items-center gap-8 rounded-xl bg-white dark:bg-zinc-900/50 p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg dark:hover:bg-zinc-900 md:grid-cols-2 md:gap-12">
+<div class="h-64 overflow-hidden rounded-lg">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6gpkwKvvhb5BStxu_VGJgpcY3W44AXj-GcDwR0Bht2vecIhVOl5QSQObdU9C9UST1HZ1iWGESFi0VCMpRsUQc9dsnO_JdnRwEUptE7ZZzsPE8cB3Q9BcVOMIZ3Tm3TVWcJG1I2rDpST8yFOeJfDo1clnV7RPtW4PojC31mhMonsfcuuISP-HLYpWnvo0NS6Jwm5aHLKqC6hst4T57071xcISlQ3okj8pa_ZwRrFOppKQ1r3uw-NE_PbA82eGM_4cw7K_TPKYoPRRK");'></div>
+</div>
+<div class="flex flex-col gap-3">
+<p class="text-sm font-semibold uppercase tracking-wider text-primary">Featured</p>
+<h3 class="text-2xl font-bold text-zinc-900 dark:text-white group-hover:text-primary transition-colors">The Ultimate Guide to Winning Challenges</h3>
+<p class="text-zinc-600 dark:text-zinc-400">Learn the best strategies and tips to dominate your opponents in Play or Pay. From understanding game mechanics to mastering psychological tactics, this guide covers it all.</p>
+</div>
+</div>
+</a>
+<div class="mt-8">
+<h3 class="mb-8 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">Latest Posts</h3>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+<a class="group flex flex-col gap-4 overflow-hidden rounded-xl bg-white dark:bg-zinc-900/50 shadow-sm transition-shadow duration-300 hover:shadow-lg dark:hover:bg-zinc-900" href="#">
+<div class="h-48 w-full overflow-hidden">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD06MiCR7zK2aIAkCniwlbtcWONfwqD1ZM6uDFpsoJgKJceS4lT1e_f07OvTWwvj_9cdz095-8f5vzrnjlJpLqwhkllbbCueqgkN5h_W2YtkGBtFrSqsMYzNH9cQMefJOhtYCR9N799Frahp8JirDf0NYKmJaq7cC1OWizNqr-d4CXtT_q6Qc2pXda8Yb1KS3jvFEEyC4xIPZ3L7XCyx9OZ3881lCv-aGPfdzeM9NfYyZUERiMY4SepM8_fdAHLH4j62b4vctLMcZTy");'></div>
+</div>
+<div class="flex flex-1 flex-col p-6 pt-0">
+<h4 class="flex-1 text-lg font-bold text-zinc-900 dark:text-white group-hover:text-primary transition-colors">Top 5 Riskiest Challenges to Try</h4>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Feeling adventurous? Explore our curated list of the most daring and exciting challenges on Play or Pay.</p>
+</div>
+</a>
+<a class="group flex flex-col gap-4 overflow-hidden rounded-xl bg-white dark:bg-zinc-900/50 shadow-sm transition-shadow duration-300 hover:shadow-lg dark:hover:bg-zinc-900" href="#">
+<div class="h-48 w-full overflow-hidden">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6c6AtB-1dnMhV-PkrhKMrxfA9WxiXJiGBBLGQc3OtwVIsBfcq57cy2i8ljf1fcr8UEXZ809T3ZTfiz-ejcqNbAmQMBTqJHaFSkt47el8cKIQYwKTMGi18NSv7PkLpGrlng3S4vzMG6nkKxlXVQ0Q_ovvirtlvJzmSLYyyVdm9p__navkM5qeT57NsLxbmHF-y91NCS-7bjyHsidRY8f-x5qtvGwShWVS4mnmAIQZGokeoCMDuBAygQs95vwbcKh4PJPWjAfsFm4nT");'></div>
+</div>
+<div class="flex flex-1 flex-col p-6 pt-0">
+<h4 class="flex-1 text-lg font-bold text-zinc-900 dark:text-white group-hover:text-primary transition-colors">Building Your Challenge Strategy</h4>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Crafting a winning strategy is key to success. This post provides insights into analyzing opponents and selecting the right challenges.</p>
+</div>
+</a>
+<a class="group flex flex-col gap-4 overflow-hidden rounded-xl bg-white dark:bg-zinc-900/50 shadow-sm transition-shadow duration-300 hover:shadow-lg dark:hover:bg-zinc-900" href="#">
+<div class="h-48 w-full overflow-hidden">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoW9LV-PxAc7HxFehN6WFaOo7-Dx4YvCmzjFNx3Yjbc2yydn5rzmchWwg-PS0EfPw5TL_aj07uzC5O0Zqj3kir2dmxj7LfQCAibXGlBVSsHgWoH_w82PuMCGYLrKrDcruV2C3xbqWQWLSHHnx4_rE40JZI7hcFawbDteVJkqCRhuKuAKLOSOpCVwpt0VyN7gpgVkMuxIvD9nTleTxeWlRXPngxsvPyY3WAI_SBy4q7gSQFZUud87mHDS-CxsfIUQ2AWAzv5R8PgIXG");'></div>
+</div>
+<div class="flex flex-1 flex-col p-6 pt-0">
+<h4 class="flex-1 text-lg font-bold text-zinc-900 dark:text-white group-hover:text-primary transition-colors">The Psychology of Playful Competition</h4>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Understand the dynamics of playful competition and how to use it to your advantage in Play or Pay.</p>
+</div>
+</a>
+<a class="group flex flex-col gap-4 overflow-hidden rounded-xl bg-white dark:bg-zinc-900/50 shadow-sm transition-shadow duration-300 hover:shadow-lg dark:hover:bg-zinc-900" href="#">
+<div class="h-48 w-full overflow-hidden">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAciiIhIg73vccCeBt-MV3iduzIIaJOyn2rjp7KGTPOhZDzefS_FZo_pJOPF3fLTi308Ro7SlQpNek02X2iHIklPNlKun2lyAPHWHwhNCGsaQrakNC3gC1HmF_JFvd0VKnuU0lpXVX1tYVeUbAMTxTrEud2Hcn49cb5UsctFOLjUOzix4OYy-D4NFE0543TFUmi1BaELD5APE0QtKSH6ZLYNVcY2hWNO5vNgtIeTZZY4etSbDnS76OTsOb6YqUOIJUWLYEce5NytM4A");'></div>
+</div>
+<div class="flex flex-1 flex-col p-6 pt-0">
+<h4 class="flex-1 text-lg font-bold text-zinc-900 dark:text-white group-hover:text-primary transition-colors">Community Spotlight: Success Stories</h4>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Get inspired by the success stories of our top players. Learn from their experiences and memorable moments.</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+<nav aria-label="Pagination" class="mt-16 flex items-center justify-center gap-2">
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors" href="#">
+<svg fill="currentColor" height="18px" viewBox="0 0 256 256" width="18px" xmlns="http://www.w3.org/2000/svg">
+<path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+</svg>
+</a>
+<a aria-current="page" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white" href="#">1</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors" href="#">2</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors" href="#">3</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors" href="#">4</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors" href="#">5</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors" href="#">
+<svg fill="currentColor" height="18px" viewBox="0 0 256 256" width="18px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</a>
+</nav>
+</div>
+</main>
+</div>
+
+</body></html>

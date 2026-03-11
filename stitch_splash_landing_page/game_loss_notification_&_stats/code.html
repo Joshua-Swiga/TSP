@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Over - Play or Pay</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ec1313",
+            "background-light": "#f8f6f6",
+            "background-dark": "#221010",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-800 dark:text-neutral-200">
+<div class="flex flex-col min-h-screen">
+<header class="border-b border-primary/20 dark:border-primary/30">
+<nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-neutral-900 dark:text-white">Play or Pay</h1>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<a class="hover:text-primary transition-colors" href="#">Challenges</a>
+<a class="hover:text-primary transition-colors" href="#">Blog</a>
+<a class="hover:text-primary transition-colors" href="#">Messages</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-background-light dark:bg-background-dark hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCENJNMO10mnUL9mhmOyyphLUZPUTon5_VNjgNNliSoAHeeQRNdc6Cwoo0ciRcFgFCP9SAPmDrezRCxWTTy-UTHM4yg2NmL1r3ROI9EQsYNrNOC0_6hk3z4cvb1bocNaq5NpUhQ-S6ZwrHxrJUOxZBGOAUPJ9uS4RmtaQ3wo5Hj9FRx-ega1rEVFGYiGZS36KAuScB0_oMfc00iHEk-hjh-Toh8TCVj23x0gNHreC0KfvTqgyiSOzunXwCIs-eYP99dq5TYBvABb5Dk");'></div>
+</div>
+</nav>
+</header>
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-lg space-y-8 text-center bg-white dark:bg-neutral-900/50 p-8 rounded-xl shadow-lg border border-primary/10">
+<div>
+<span class="material-symbols-outlined text-7xl text-primary">sentiment_dissatisfied</span>
+<h2 class="mt-4 text-4xl font-extrabold text-neutral-900 dark:text-white">Game Over</h2>
+<p class="mt-2 text-base text-neutral-600 dark:text-neutral-300">Unfortunately, you didn't win this round. Chin up, there's always the next game!</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-lg">
+<p class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Tokens Transferred</p>
+<p class="text-3xl font-bold text-primary">-50</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-lg">
+<p class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Final Score Difference</p>
+<p class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">-20</p>
+</div>
+</div>
+<div class="text-left space-y-4">
+<h3 class="text-lg font-bold text-neutral-900 dark:text-white">Game Summary</h3>
+<p class="text-sm text-neutral-600 dark:text-neutral-300">
+            The game was intense, with several close calls. Your opponent, Sarah, successfully completed most of the challenges, leading to a final score difference of 20 points. You transferred 50 tokens as per the game rules.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all">
+            Return to Lobby
+          </button>
+<button class="w-full flex items-center justify-center px-6 py-3 border border-primary/20 text-base font-bold rounded-lg text-neutral-800 dark:text-neutral-200 bg-primary/10 hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all">
+            Top Up Tokens
+          </button>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Game Preferences</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ec1313",
+            "background-light": "#f8f6f6",
+            "background-dark": "#221010",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ec1313' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.5rem center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+        padding-right: 2.5rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="fixed inset-0 bg-black/30 backdrop-blur-sm z-10 flex items-center justify-center p-4">
+<div class="relative w-full max-w-lg bg-background-light dark:bg-background-dark rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in-0 zoom-in-95">
+<div class="absolute top-4 right-4">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<div class="p-8 sm:p-10 text-center">
+<h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Set Your Game Preferences</h2>
+<p class="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                To start playing, please set your preferences. This helps us match you with the right opponents.
+            </p>
+</div>
+<div class="px-8 sm:px-10 pb-8 space-y-6">
+<div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Preferences</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="name">Name</label>
+<input class="w-full bg-white/50 dark:bg-black/20 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-lg focus:ring-primary focus:border-primary transition-all duration-300 p-3" id="name" placeholder="Enter your name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="age">Age Range</label>
+<select class="form-select w-full bg-white/50 dark:bg-black/20 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-primary focus:border-primary transition-all duration-300 p-3" id="age">
+<option>Select age range</option>
+<option>18-24</option>
+<option>25-34</option>
+<option>35+</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="sex">Sex</label>
+<select class="form-select w-full bg-white/50 dark:bg-black/20 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-primary focus:border-primary transition-all duration-300 p-3" id="sex">
+<option>Select sex</option>
+<option>Male</option>
+<option>Female</option>
+<option>Any</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="status">Online Status</label>
+<select class="form-select w-full bg-white/50 dark:bg-black/20 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-primary focus:border-primary transition-all duration-300 p-3" id="status">
+<option>Select online status</option>
+<option>Online</option>
+<option>Offline</option>
+</select>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Matchmaking</h3>
+<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
+<li>We'll match you instantly if an opponent is online.</li>
+<li>If not, you can request an SMS notification when someone becomes available.</li>
+<li>A minimum credit score is required to participate.</li>
+</ul>
+</div>
+</div>
+<div class="px-8 sm:px-10 py-6 bg-gray-50 dark:bg-black/20 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between">
+<button class="px-6 py-2.5 rounded-lg text-sm font-bold text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                Previous
+            </button>
+<button class="px-8 py-2.5 rounded-lg text-sm font-bold text-white bg-primary hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">
+                Next
+            </button>
+</div>
+</div>
+</div>
+
+</body></html>

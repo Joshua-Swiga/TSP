@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .animate-progress {
+                animation: progress 2s ease-in-out forwards;
+            }
+            @keyframes progress {
+                from { width: 0%; }
+                to { width: var(--progress-width, 0%); }
+            }
+            .animate-fade-in {
+                animation: fadeIn 1s ease-in-out forwards;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ea2a2a",
+              "background-light": "#f8f6f6",
+              "background-dark": "#1a1a1a",
+              "card-light": "#ffffff",
+              "card-dark": "#2c2c2c",
+              "text-light": "#1a1a1a",
+              "text-dark": "#f8f6f6",
+              "text-muted-light": "#6b7280",
+              "text-muted-dark": "#9ca3af",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+            boxShadow: {
+                'lg': '0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05)',
+                'xl': '0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)',
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex items-center justify-center min-h-screen p-4">
+<div class="w-full max-w-lg p-8 space-y-8 text-center bg-card-light dark:bg-card-dark rounded-xl shadow-xl">
+<div class="relative w-28 h-28 mx-auto animate-fade-in" style="animation-delay: 0.1s;">
+<div class="absolute inset-0 border-4 border-primary/20 rounded-full"></div>
+<div class="absolute inset-0 w-full h-full border-t-4 border-primary rounded-full animate-spin"></div>
+<div class="absolute inset-2 flex items-center justify-center bg-primary rounded-full">
+<span class="text-5xl font-bold text-white">P</span>
+</div>
+</div>
+<div class="space-y-4 animate-fade-in" style="animation-delay: 0.2s;">
+<h1 class="text-3xl font-bold">Setting up your game...</h1>
+<p class="text-lg text-text-muted-light dark:text-text-muted-dark">Hang tight, we're making things awesome!</p>
+</div>
+<div class="space-y-3 animate-fade-in" style="animation-delay: 0.3s;">
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Loading resources...</span>
+<span class="text-sm font-bold text-primary">75%</span>
+</div>
+<div class="w-full bg-primary/20 rounded-full h-3.5">
+<div class="bg-primary h-3.5 rounded-full animate-progress" style="--progress-width: 75%;"></div>
+</div>
+</div>
+<div class="pt-6 animate-fade-in" style="animation-delay: 0.4s;">
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-lg text-left">
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-3xl text-primary">
+                            tips_and_updates
+                        </span>
+<div>
+<h2 class="font-bold text-lg mb-1">Did you know?</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark">
+                                In 'Play or Pay', you can double down on a dare to increase the stakes. Win, and you get double the tokens. Lose, and it's a double payout!
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

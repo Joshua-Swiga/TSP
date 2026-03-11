@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Token Economy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ec1313",
+            "background-light": "#f8f6f6",
+            "background-dark": "#221010",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center font-display">
+<div aria-hidden="true" class="fixed inset-0 bg-background-dark/30 backdrop-blur-sm"></div>
+<div class="relative bg-background-light dark:bg-background-dark w-full max-w-lg p-8 rounded-xl shadow-2xl text-center">
+<div class="flex justify-center mb-6">
+<div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-full">
+<svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6ZM12 20.25a8.25 8.25 0 1 0 0-16.5 8.25 8.25 0 0 0 0 16.5Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+<h1 class="text-2xl font-bold text-background-dark dark:text-background-light mb-4">Token Economy</h1>
+<div class="space-y-4 text-left text-background-dark/80 dark:text-background-light/80 my-8">
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary mt-1">poker_chip</span>
+<p>Tokens are required to play games on Play or Pay.</p>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary mt-1">payments</span>
+<p>You can withdraw your tokens as real cash to your mobile number.</p>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary mt-1">receipt_long</span>
+<p>A 10% transaction cost applies (excluding mobile money charges).</p>
+</div>
+</div>
+<div class="flex justify-between items-center mt-8">
+<button class="px-6 py-2 rounded-lg text-sm font-bold text-background-dark dark:text-background-light bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+        Previous
+      </button>
+<div class="flex space-x-2">
+<span class="w-2 h-2 rounded-full bg-primary/20 dark:bg-primary/30"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary/20 dark:bg-primary/30"></span>
+</div>
+<button class="px-6 py-2 rounded-lg text-sm font-bold text-white bg-primary hover:bg-opacity-90 transition-colors">
+        Next
+      </button>
+</div>
+<button class="absolute top-4 right-4 text-background-dark/50 dark:text-background-light/50 hover:text-background-dark dark:hover:text-background-light transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+
+</body></html>

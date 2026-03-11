@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ea2a2a",
+              "background-light": "#f8f6f6",
+              "background-dark": "#211111",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .token-positive {
+        color: #22c55e;
+      }
+      .token-negative {
+        color: #ef4444;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-background-light dark:bg-background-dark p-6 hidden lg:flex flex-col justify-between border-r border-primary/20 dark:border-primary/30">
+<div>
+<div class="flex items-center gap-4 mb-10">
+<img alt="Sophia's avatar" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA510Zu3PGFrECOWqX1-JfA0fni6hXaz9nihBOggcso2giiuEVGoUtjHfuQyxC1gtAu4UBl1CZ1xtapE4i5gna7BPUjx2Q9VWtXEavXPqrIgVrcxVUUlJAXBQLNT0SFVohBGueF1FKBCQM9wzqAxaGcrzZVxano0e8B1vF7MttjpIL9AiNWQh2bcotHTRAmjd4yPSpjvajrTHUbXwDaQPMwvbvSaw3RfpseD0mdtJRkj9SyNY9AaEJmwDyQItlbiwipHg2vr2blYiy0"/>
+<div>
+<h1 class="font-bold text-lg text-gray-900 dark:text-white">
+                Sophia
+              </h1>
+<p class="text-sm text-gray-500 dark:text-gray-400">@sophia_r</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<svg class="text-gray-600 dark:text-gray-400" fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path>
+</svg>
+<span class="font-medium text-gray-700 dark:text-gray-300">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<svg class="text-gray-600 dark:text-gray-400" fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M232,64H208V56a16,16,0,0,0-16-16H64A16,16,0,0,0,48,56v8H24A16,16,0,0,0,8,80V96a40,40,0,0,0,40,40h3.65A80.13,80.13,0,0,0,120,191.61V216H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V191.58c31.94-3.23,58.44-25.64,68.08-55.58H208a40,40,0,0,0,40-40V80A16,16,0,0,0,232,64ZM48,120A24,24,0,0,1,24,96V80H48v32q0,4,.39,8Zm144-8.9c0,35.52-28.49,64.64-63.51,64.9H128a64,64,0,0,1-64-64V56H192ZM232,96a24,24,0,0,1-24,24h-.5a81.81,81.81,0,0,0,.5-8.9V80h24Z"></path></svg>
+<span class="font-medium text-gray-700 dark:text-gray-300">Challenges</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<svg class="text-gray-600 dark:text-gray-400" fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path></svg>
+<span class="font-medium text-gray-700 dark:text-gray-300">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<svg class="text-gray-600 dark:text-gray-400" fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M98.91,157.09A71.53,71.53,0,0,1,120,208a8,8,0,0,1-16,0,56,56,0,0,0-56-56,8,8,0,0,1,0-16A71.53,71.53,0,0,1,98.91,157.09ZM48,88a8,8,0,0,0,0,16A104,104,0,0,1,152,208a8,8,0,0,0,16,0A120,120,0,0,0,48,88Zm118.79,1.21A166.9,166.9,0,0,0,48,40a8,8,0,0,0,0,16,151,151,0,0,1,107.48,44.52A151,151,0,0,1,200,208a8,8,0,0,0,16,0A166.9,166.9,0,0,0,166.79,89.21ZM52,192a12,12,0,1,0,12,12A12,12,0,0,0,52,192Z"></path></svg>
+<span class="font-medium text-gray-700 dark:text-gray-300">Blog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<svg class="text-primary" fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path></svg>
+<span class="font-bold">Profile</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="flex-1 p-6 lg:p-10">
+<div class="max-w-4xl mx-auto">
+<div class="flex justify-between items-center mb-8">
+<h1 class="text-4xl font-bold text-gray-900 dark:text-white">
+              Tokens
+            </h1>
+<button class="bg-primary text-white font-bold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
+<span>Top Up Tokens</span>
+</button>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl p-6 mb-8 border border-gray-200 dark:border-gray-700">
+<h2 class="text-lg font-medium text-gray-500 dark:text-gray-400 mb-2">
+              Current Balance
+            </h2>
+<p class="text-5xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+<svg class="text-primary" fill="currentColor" height="36" viewBox="0 0 256 256" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-88a28,28,0,0,1,14.24-24.28,8,8,0,1,1,7.52,14.56A12,12,0,0,0,136,128v40a8,8,0,0,1-16,0V124A28,28,0,0,1,120,96a28,28,0,0,1,28,28,8,8,0,0,1-16,0,12,12,0,0,0-12-12,12,12,0,0,0-12,12,8,8,0,0,1-16,0Z"></path></svg>
+              1,250
+            </p>
+</div>
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Transaction History
+          </h2>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 dark:bg-gray-800/50">
+<tr>
+<th class="p-4 font-semibold text-sm text-gray-600 dark:text-gray-400">Date</th>
+<th class="p-4 font-semibold text-sm text-gray-600 dark:text-gray-400">Description</th>
+<th class="p-4 font-semibold text-sm text-gray-600 dark:text-gray-400 text-right">Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-gray-200 dark:border-gray-700">
+<td class="p-4 text-gray-500 dark:text-gray-400">2024-07-26</td>
+<td class="p-4 text-gray-700 dark:text-gray-300">Received tokens from challenge win</td>
+<td class="p-4 font-bold text-right token-positive">+500</td>
+</tr>
+<tr class="border-t border-gray-200 dark:border-gray-700">
+<td class="p-4 text-gray-500 dark:text-gray-400">2024-07-25</td>
+<td class="p-4 text-gray-700 dark:text-gray-300">Sent tokens for challenge loss</td>
+<td class="p-4 font-bold text-right token-negative">-250</td>
+</tr>
+<tr class="border-t border-gray-200 dark:border-gray-700">
+<td class="p-4 text-gray-500 dark:text-gray-400">2024-07-24</td>
+<td class="p-4 text-gray-700 dark:text-gray-300">Received tokens from challenge win</td>
+<td class="p-4 font-bold text-right token-positive">+300</td>
+</tr>
+<tr class="border-t border-gray-200 dark:border-gray-700">
+<td class="p-4 text-gray-500 dark:text-gray-400">2024-07-23</td>
+<td class="p-4 text-gray-700 dark:text-gray-300">Sent tokens for challenge loss</td>
+<td class="p-4 font-bold text-right token-negative">-150</td>
+</tr>
+<tr class="border-t border-gray-200 dark:border-gray-700">
+<td class="p-4 text-gray-500 dark:text-gray-400">2024-07-22</td>
+<td class="p-4 text-gray-700 dark:text-gray-300">Received tokens from challenge win</td>
+<td class="p-4 font-bold text-right token-positive">+350</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

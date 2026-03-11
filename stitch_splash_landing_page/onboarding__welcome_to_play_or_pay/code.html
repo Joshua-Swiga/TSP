@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play or Pay - Welcome</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec1313",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221010",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+            borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex items-center justify-center min-h-screen">
+<div class="relative w-full max-w-lg p-8 mx-4 bg-white dark:bg-[#1A0B0B] rounded-xl shadow-2xl">
+<button class="absolute top-4 right-4 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined"> close </span>
+</button>
+<div class="text-center">
+<div class="flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-5xl"> sports_esports </span>
+</div>
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white">Welcome to Play or Pay!</h1>
+<p class="mt-2 text-slate-600 dark:text-slate-300">Challenge your friends in playful or daring games. Win or pay the price!</p>
+</div>
+<div class="mt-8 space-y-4">
+<p class="text-lg font-semibold text-slate-800 dark:text-slate-100">Here's what you need to know:</p>
+<ul class="space-y-3">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-1"> check_circle </span>
+<p class="text-slate-600 dark:text-slate-300"><strong class="font-semibold text-slate-700 dark:text-slate-200">100 free tokens</strong> for new users to start playing immediately.</p>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-1"> check_circle </span>
+<p class="text-slate-600 dark:text-slate-300">Tokens are <strong class="font-semibold text-slate-700 dark:text-slate-200">non-withdrawable</strong> and for in-app fun only.</p>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-1"> check_circle </span>
+<p class="text-slate-600 dark:text-slate-300">Click <strong class="font-semibold text-slate-700 dark:text-slate-200">"Play Now"</strong> to jump right into the action.</p>
+</li>
+</ul>
+</div>
+<div class="mt-8">
+<button class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/30 transition-all duration-300 ease-in-out transform hover:-translate-y-1">Play Now</button>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-8 h-2 bg-primary rounded-full"></div>
+<div class="w-2 h-2 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+<div class="w-2 h-2 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+</div>
+<button class="text-primary font-bold py-2 px-4 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">Next</button>
+</div>
+</div>
+</div>
+
+</body></html>
